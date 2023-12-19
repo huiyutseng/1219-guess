@@ -1,0 +1,31 @@
+<script>
+var randomNumber = Math.floor(Math.random() * 10) + 1;
+
+// Flag to control the game loop
+let correctGuess = false;
+
+// Main game loop
+while (!correctGuess) {
+  // Prompt the user for input
+  const userGuess = window.prompt('Guess a number between 1 and 10:');
+
+  // Check if the user clicked cancel or closed the prompt
+  if (userGuess === null) {
+    // Exit the game
+    break;
+  }
+
+  const guess = parseInt(userGuess);
+
+  // Check if the guess is correct
+  if (guess === randomNumber) {
+    correctGuess = true;
+    window.alert('Congratulations! You guessed the correct number.');
+  } else {
+    window.alert('Incorrect! Try again.');
+  }
+}
+
+// Display a farewell message
+window.alert('Thanks for playing!');
+</script>
